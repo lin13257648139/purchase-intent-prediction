@@ -1,0 +1,43 @@
+{
+  "pipeline_version": "2.0",
+  "data_usage_summary": {
+    "raw_csv_total_records": 12256906,
+    "note": "原始 CSV 约 1225 万条；特征聚合用 day<=17 的有效记录；建模用采样后的用户-商品对"
+  },
+  "time_split": {
+    "feature_window": "day <= 17",
+    "label_window": "day 18-19",
+    "max_feature_day": 17
+  },
+  "cleaning": {
+    "raw": 7137379,
+    "invalid_behavior": 0,
+    "missing_category": 0,
+    "filled_category": 0,
+    "valid": 7137379,
+    "chunks": 41
+  },
+  "feature_aggregation": {
+    "interaction_records_used": 7137379,
+    "user_item_pairs_total": 2759919,
+    "description": "全量分块聚合，用于计算用户/商品/品类/交互特征"
+  },
+  "modeling_samples": {
+    "val_period_buy_pairs": 1157,
+    "positive_in_training": 280,
+    "negative_pool_size": 2759639,
+    "negative_sampled": 4200,
+    "total_for_model": 4480,
+    "pos_neg_ratio": 15.0
+  },
+  "features": {
+    "count": 68
+  },
+  "methodology": {
+    "aggregation": "全量分块增量聚合（非随机截断采样）",
+    "smote": "仅对训练集过采样，验证集保持原始分布",
+    "validation_split": "stratified hold-out 80/20",
+    "random_seed": 42
+  },
+  "elapsed_sec": 8005.4
+}

@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.idea/
+
+# Raw Tianchi data is distributed separately and is too large for Git.
+tianchi_mobile_recommend_train_user.csv
+tianchi_mobile_recommend_train_item.csv
+*.zip
+*.rar
+
+# Local training caches and derived matrices.
+catboost_info/
+**/catboost_info/
+可视化图表/features.npz
+
+# The filled competition report contains team-member information.
+报告/*.docx
+
+.DS_Store
+Thumbs.db
